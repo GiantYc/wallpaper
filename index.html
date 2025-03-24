@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Heaven - High Quality Wallpaper Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #111;
+            --secondary-color: #555;
+            --accent-color: #3cb46e;
+            --text-color: #111;
+            --light-gray: #f5f5f5;
+            --border-color: #eee;
+            --font-light: 300;
+            --font-regular: 400;
+            --font-medium: 500;
+            --font-bold: 600;
+        }
+        
+        body {
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navigation */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: var(--font-bold);
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            background-color: var(--light-gray);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 14px;
+            font-weight: var(--font-medium);
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-button {
+            margin-left: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: var(--font-medium);
+            transition: background-color 0.2s;
+        }
+        
+        .nav-button:hover {
+            background-color: #35a062;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                        url('https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            color: white;
+        }
+        
+        /* Hero Background Elements */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(60, 180, 110, 0.15) 0%, 
+                rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            font-weight: var(--font-bold);
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: var(--font-regular);
+            line-height: 1.6;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .hero-button {
+            padding: 15px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: var(--font-medium);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .hero-button.primary {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-button.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        .hero-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .hero-button.primary:hover {
+            background: #35a062;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+        
+        /* Categories Section */
+        .section-title {
+            text-align: left;
+            margin: 60px 0 30px;
+            font-size: 22px;
+            font-weight: var(--font-bold);
+            color: var(--primary-color);
+        }
+        
+        /* Categories Scrollable Section */
+        .categories-container {
+            position: relative;
+        }
+        
+        .categories-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .categories-masonry {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 24px;
+        }
+        
+        .categories-row {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+            gap: 24px;
+            padding: 5px;
+            width: 100%;
+        }
+        
+        .categories-row::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .category-card {
+            flex: 0 0 320px;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-main-img {
+            width: 100%;
+            height: 180px; /* 16:9比例的高度 (320 / 16 * 9 = 180) */
+            object-fit: cover;
+            display: block;
+        }
+        
+        .category-thumbs {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            padding: 8px 0;
+            background-color: #fafafa;
+        }
+        
+        .category-thumb {
+            flex: 1;
+            height: 100%;
+            object-fit: cover;
+            border-right: 1px solid var(--border-color);
+            margin: 0 4px;
+        }
+        
+        .category-thumb:first-child {
+            margin-left: 8px;
+        }
+        
+        .category-thumb:last-child {
+            border-right: none;
+            margin-right: 8px;
+        }
+        
+        .category-info {
+            padding: 15px;
+            text-align: left;
+            background-color: white;
+        }
+        
+        .category-info h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: var(--font-medium);
+        }
+        
+        .category-info p {
+            color: var(--secondary-color);
+            font-size: 14px;
+            font-weight: var(--font-light);
+        }
+        
+        .category-count {
+            position: absolute;
+            bottom: 110px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .view-more {
+            display: inline-block;
+            margin: 10px 0 60px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: var(--font-medium);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .view-more:hover {
+            color: #35a062;
+        }
+        
+        /* Creation Section */
+        .creation-section {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .creation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        
+        .creation-item {
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .creation-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .creation-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .creation-item .info {
+            padding: 12px;
+            font-size: 13px;
+            color: var(--secondary-color);
+        }
+        
+        .creation-upload {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 180px;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px dashed #ddd;
+            margin-top: 24px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .creation-upload:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .creation-upload i {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Featured Section */
+        .featured-section {
+            padding: 60px 0;
+        }
+        
+        .featured-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .featured-tab {
+            padding: 10px 20px 10px 0;
+            margin-right: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            position: relative;
+            color: var(--secondary-color);
+            font-weight: var(--font-regular);
+            transition: all 0.2s;
+        }
+        
+        .featured-tab.active {
+            color: var(--primary-color);
+            font-weight: var(--font-medium);
+        }
+        
+        .featured-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .featured-item {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .featured-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .featured-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .featured-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .featured-item .download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 4px;
+            padding: 6px 10px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        
+        .featured-item:hover .download-btn {
+            opacity: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #fff;
+            color: var(--secondary-color);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: var(--font-medium);
+            color: var(--primary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--secondary-color);
+        }
+        
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            color: var(--primary-color);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        
+        .scroll-btn:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        .scroll-left {
+            left: -20px;
+        }
+        
+        .scroll-right {
+            right: -20px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+            }
+            
+            .search-bar {
+                margin: 15px 0;
+                max-width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .categories {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .section-title {
+                text-align: center;
+            }
+        }
+        
+        /* Creator's Corner Section */
+        .creator-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+        
+        .creator-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 5px;
+        }
+        
+        .creator-row::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .creator-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .creator-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .creator-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Mobile Wallpapers (9:16) */
+        .creator-card.mobile {
+            flex: 0 0 225px; /* 基于16:9比例计算 */
+            height: 400px;
+        }
+        
+        /* Desktop Wallpapers (16:9) */
+        .creator-card.desktop {
+            flex: 0 0 480px;
+            height: 270px;
+        }
+        
+        /* Avatar Wallpapers (1:1) */
+        .creator-card.avatar {
+            flex: 0 0 280px;
+            height: 280px;
+        }
+        
+        .creator-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .creator-tag {
+            font-size: 14px;
+            font-weight: var(--font-medium);
+        }
+        
+        .download-count {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        /* Upload Creation Card */
+        .upload-creation {
+            margin-top: 20px;
+        }
+        
+        .upload-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .upload-card:hover {
+            border-color: var(--accent-color);
+            background-color: #f8f8f8;
+        }
+        
+        .upload-card i {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .upload-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .upload-card p {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .upload-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: var(--font-medium);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .upload-btn:hover {
+            background-color: #35a062;
+        }
+        
+        /* Photos Section */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .photo-group {
+            display: flex;
+            gap: 12px;
+            grid-column: span 2;
+            height: 480px; /* 设置固定高度 */
+        }
+        
+        .photo-left {
+            flex: 0 0 270px; /* 9:16比例，基于480px高度 */
+            height: 100%;
+        }
+        
+        .photo-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .photo-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: var(--light-gray);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Photo Card Types */
+        .photo-card.mobile {
+            height: 100%; /* 保持9:16比例 */
+        }
+        
+        .photo-card.desktop {
+            flex: 1;
+            /* 16:9比例 */
+            aspect-ratio: 16/9;
+        }
+        
+        .photo-card.avatar {
+            flex: 1;
+            /* 1:1比例 */
+            aspect-ratio: 1/1;
+        }
+        
+        .photo-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .photo-card:hover .photo-info {
+            opacity: 1;
+        }
+        
+        .photo-tag {
+            font-size: 14px;
+            font-weight: var(--font-medium);
+        }
+        
+        .download-count {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        /* More Button */
+        .more-container {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .more-btn {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-color);
+            padding: 12px 40px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: var(--font-medium);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .more-btn:hover {
+            background-color: var(--light-gray);
+            border-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Wallpaper Heaven</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search wallpapers...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Explore</a>
+                    <a href="#" class="nav-link">Categories</a>
+                    <a href="#" class="nav-link">Create</a>
+                    <button class="nav-button">Login</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Internet's Source of Visuals</h1>
+                <p>Find the perfect wallpaper for your device, powered by creators worldwide. Whether you prefer minimalist styles, photography, or creative designs, there's something for everyone.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="hero-button primary">Browse Wallpapers</a>
+                    <a href="#" class="hero-button secondary">Upload Creation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container categories-container">
+        <h2 class="section-title">Popular Categories</h2>
+        
+        <div class="categories-wrapper">
+            <button class="scroll-btn scroll-left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="categories-masonry">
+                <!-- First Row -->
+                <div class="categories categories-row">
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Black & White">
+                        <span class="category-count">326+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1485841890310-6a055c88698a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1515549832467-8783363e19b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1486748719772-dac71e23eaa1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Black & White</h3>
+                            <p>Classic timeless black and white art wallpapers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Motion">
+                        <span class="category-count">189+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1551971902-11469f13be15?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1583292650907-ad9283e2a30d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Motion</h3>
+                            <p>Dynamic wallpapers full of energy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Simple Outline">
+                        <span class="category-count">245+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1547333590-47fae5f58d21?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1541250848873-671825c04b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Simple Outline</h3>
+                            <p>Clean and elegant line design wallpapers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Collage">
+                        <span class="category-count">156+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1582561424760-0321336af927?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1618673747378-7e0d3561371a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1587045787481-ce945630a9bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Collage</h3>
+                            <p>Creative collage art wallpapers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Photography">
+                        <span class="category-count">452+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1500534623283-312aebe2edc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Photography</h3>
+                            <p>Curated high-quality photography wallpapers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1616587226157-48e49175ee20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="News Film">
+                        <span class="category-count">187+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>News Film</h3>
+                            <p>Historical moments captured in news imagery</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Row -->
+                <div class="categories categories-row">
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1594729095022-e2f6d2eece9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Textures">
+                        <span class="category-count">215+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1520121401995-928cd50d4e27?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Textures</h3>
+                            <p>Beautiful texture patterns for your device</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1535868463750-c78d9543614f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Gradient">
+                        <span class="category-count">178+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1557682250-36269cb105f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1608501078713-8e445a709b39?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Gradient</h3>
+                            <p>Smooth color transitions for modern devices</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nature">
+                        <span class="category-count">520+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Nature</h3>
+                            <p>Breathtaking landscapes and natural wonders</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Technology">
+                        <span class="category-count">265+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Technology</h3>
+                            <p>Futuristic tech and digital wallpapers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1524721696987-b9527df9e512?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Architecture">
+                        <span class="category-count">340+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Architecture</h3>
+                            <p>Stunning buildings and architectural marvels</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img class="category-main-img" src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abstract">
+                        <span class="category-count">290+</span>
+                        <div class="category-thumbs">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1507908708918-778587c9e563?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                            <img class="category-thumb" src="https://images.unsplash.com/photo-1614850523011-8f49ffc73908?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="">
+                        </div>
+                        <div class="category-info">
+                            <h3>Abstract</h3>
+                            <p>Creative abstract art and designs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="scroll-btn scroll-right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <a href="#" class="view-more">View more categories →</a>
+    </section>
+
+    <!-- Creator's Corner Section -->
+    <section class="container">
+        <h2 class="section-title">Creator's Corner</h2>
+        <div class="creator-grid">
+            <!-- Mobile Wallpapers (9:16) -->
+            <div class="creator-row mobile-row">
+                <div class="creator-card mobile">
+                    <img src="https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mobile Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Mobile</span>
+                        <span class="download-count">2.4k</span>
+                    </div>
+                </div>
+                <div class="creator-card mobile">
+                    <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mobile Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Mobile</span>
+                        <span class="download-count">1.8k</span>
+                    </div>
+                </div>
+                <div class="creator-card mobile">
+                    <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mobile Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Mobile</span>
+                        <span class="download-count">3.2k</span>
+                    </div>
+                </div>
+                <div class="creator-card mobile">
+                    <img src="https://images.unsplash.com/photo-1616606103915-dea7be788566?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mobile Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Mobile</span>
+                        <span class="download-count">2.1k</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Wallpapers (16:9) -->
+            <div class="creator-row desktop-row">
+                <div class="creator-card desktop">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desktop Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Desktop</span>
+                        <span class="download-count">4.5k</span>
+                    </div>
+                </div>
+                <div class="creator-card desktop">
+                    <img src="https://images.unsplash.com/photo-1511300636408-a63d4dc89marr?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desktop Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Desktop</span>
+                        <span class="download-count">3.7k</span>
+                    </div>
+                </div>
+                <div class="creator-card desktop">
+                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desktop Wallpaper">
+                    <div class="creator-info">
+                        <span class="creator-tag">Desktop</span>
+                        <span class="download-count">5.1k</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avatar Wallpapers (1:1) -->
+            <div class="creator-row avatar-row">
+                <div class="creator-card avatar">
+                    <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avatar">
+                    <div class="creator-info">
+                        <span class="creator-tag">Avatar</span>
+                        <span class="download-count">1.2k</span>
+                    </div>
+                </div>
+                <div class="creator-card avatar">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avatar">
+                    <div class="creator-info">
+                        <span class="creator-tag">Avatar</span>
+                        <span class="download-count">890</span>
+                    </div>
+                </div>
+                <div class="creator-card avatar">
+                    <img src="https://images.unsplash.com/photo-1618005198208-2d3ec5f5d5c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avatar">
+                    <div class="creator-info">
+                        <span class="creator-tag">Avatar</span>
+                        <span class="download-count">1.5k</span>
+                    </div>
+                </div>
+                <div class="creator-card avatar">
+                    <img src="https://images.unsplash.com/photo-1618005198635-69cc2f1a6276?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avatar">
+                    <div class="creator-info">
+                        <span class="creator-tag">Avatar</span>
+                        <span class="download-count">2.3k</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Creation Button -->
+            <div class="upload-creation">
+                <div class="upload-card">
+                    <i class="fas fa-plus"></i>
+                    <h3>Create your own wallpaper</h3>
+                    <p>Share your creativity with the world</p>
+                    <button class="upload-btn">Upload Creation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section class="container">
+        <h2 class="section-title">Photos</h2>
+        <div class="photos-grid">
+            <!-- Photo Group 1 -->
+            <div class="photo-group">
+                <div class="photo-left">
+                    <div class="photo-card mobile">
+                        <img src="https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d" alt="Mobile Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Mobile</span>
+                            <span class="download-count">2.4k</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-right">
+                    <div class="photo-card desktop">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Desktop Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Desktop</span>
+                            <span class="download-count">4.5k</span>
+                        </div>
+                    </div>
+                    <div class="photo-card avatar">
+                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead" alt="Avatar">
+                        <div class="photo-info">
+                            <span class="photo-tag">Avatar</span>
+                            <span class="download-count">1.2k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Group 2 -->
+            <div class="photo-group">
+                <div class="photo-left">
+                    <div class="photo-card mobile">
+                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead" alt="Mobile Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Mobile</span>
+                            <span class="download-count">3.1k</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-right">
+                    <div class="photo-card desktop">
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809" alt="Desktop Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Desktop</span>
+                            <span class="download-count">5.2k</span>
+                        </div>
+                    </div>
+                    <div class="photo-card avatar">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" alt="Avatar">
+                        <div class="photo-info">
+                            <span class="photo-tag">Avatar</span>
+                            <span class="download-count">890</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Group 3 -->
+            <div class="photo-group">
+                <div class="photo-left">
+                    <div class="photo-card mobile">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926" alt="Mobile Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Mobile</span>
+                            <span class="download-count">2.8k</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-right">
+                    <div class="photo-card desktop">
+                        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Desktop Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Desktop</span>
+                            <span class="download-count">3.7k</span>
+                        </div>
+                    </div>
+                    <div class="photo-card avatar">
+                        <img src="https://images.unsplash.com/photo-1618005198208-2d3ec5f5d5c5" alt="Avatar">
+                        <div class="photo-info">
+                            <span class="photo-tag">Avatar</span>
+                            <span class="download-count">1.5k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Group 4 -->
+            <div class="photo-group">
+                <div class="photo-left">
+                    <div class="photo-card mobile">
+                        <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8" alt="Mobile Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Mobile</span>
+                            <span class="download-count">2.1k</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-right">
+                    <div class="photo-card desktop">
+                        <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a" alt="Desktop Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Desktop</span>
+                            <span class="download-count">4.9k</span>
+                        </div>
+                    </div>
+                    <div class="photo-card avatar">
+                        <img src="https://images.unsplash.com/photo-1618005198635-69cc2f1a6276" alt="Avatar">
+                        <div class="photo-info">
+                            <span class="photo-tag">Avatar</span>
+                            <span class="download-count">2.3k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Group 5 -->
+            <div class="photo-group">
+                <div class="photo-left">
+                    <div class="photo-card mobile">
+                        <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9" alt="Mobile Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Mobile</span>
+                            <span class="download-count">1.9k</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-right">
+                    <div class="photo-card desktop">
+                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" alt="Desktop Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Desktop</span>
+                            <span class="download-count">3.4k</span>
+                        </div>
+                    </div>
+                    <div class="photo-card avatar">
+                        <img src="https://images.unsplash.com/photo-1582561424760-0321336af927" alt="Avatar">
+                        <div class="photo-info">
+                            <span class="photo-tag">Avatar</span>
+                            <span class="download-count">1.7k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Group 6 -->
+            <div class="photo-group">
+                <div class="photo-left">
+                    <div class="photo-card mobile">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27" alt="Mobile Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Mobile</span>
+                            <span class="download-count">2.6k</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-right">
+                    <div class="photo-card desktop">
+                        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" alt="Desktop Wallpaper">
+                        <div class="photo-info">
+                            <span class="photo-tag">Desktop</span>
+                            <span class="download-count">4.2k</span>
+                        </div>
+                    </div>
+                    <div class="photo-card avatar">
+                        <img src="https://images.unsplash.com/photo-1618673747378-7e0d3561371a" alt="Avatar">
+                        <div class="photo-info">
+                            <span class="photo-tag">Avatar</span>
+                            <span class="download-count">1.4k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-container">
+            <button class="more-btn">More</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Company Profile</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Copyright Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Wallpaper Categories</h3>
+                    <ul>
+                        <li><a href="#">Desktop Wallpapers</a></li>
+                        <li><a href="#">Mobile Wallpapers</a></li>
+                        <li><a href="#">Tablet Wallpapers</a></li>
+                        <li><a href="#">4K Wallpapers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Wallpaper Heaven. All rights reserved.</p>
+                <p>Yes, the wallpapers are actually free. All images can be downloaded and used for personal or commercial projects.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Simple tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.featured-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+
+        // Categories Scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryRows = document.querySelectorAll('.categories-row');
+            const scrollLeftBtn = document.querySelector('.scroll-left');
+            const scrollRightBtn = document.querySelector('.scroll-right');
+            
+            if (scrollLeftBtn && scrollRightBtn && categoryRows.length) {
+                const scrollAmount = 360; // Slightly more than card width + gap
+                
+                scrollLeftBtn.addEventListener('click', () => {
+                    categoryRows.forEach(row => {
+                        row.scrollBy({
+                            left: -scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+                
+                scrollRightBtn.addEventListener('click', () => {
+                    categoryRows.forEach(row => {
+                        row.scrollBy({
+                            left: scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+                
+                // Sync scroll between rows
+                categoryRows.forEach(row => {
+                    row.addEventListener('scroll', (e) => {
+                        const scrollLeft = e.target.scrollLeft;
+                        
+                        // Sync other rows to match this scroll position
+                        categoryRows.forEach(otherRow => {
+                            if (otherRow !== e.target) {
+                                otherRow.scrollLeft = scrollLeft;
+                            }
+                        });
+                        
+                        // Update button visibility
+                        if (scrollLeft <= 0) {
+                            scrollLeftBtn.style.opacity = '0.5';
+                        } else {
+                            scrollLeftBtn.style.opacity = '1';
+                        }
+                        
+                        if (scrollLeft + row.clientWidth >= row.scrollWidth - 10) {
+                            scrollRightBtn.style.opacity = '0.5';
+                        } else {
+                            scrollRightBtn.style.opacity = '1';
+                        }
+                    });
+                });
+                
+                // Initial button state
+                const firstRow = categoryRows[0];
+                if (firstRow.scrollWidth <= firstRow.clientWidth) {
+                    scrollLeftBtn.style.display = 'none';
+                    scrollRightBtn.style.display = 'none';
+                } else {
+                    scrollLeftBtn.style.opacity = '0.5';
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
